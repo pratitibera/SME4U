@@ -29,11 +29,10 @@ function attachSignin(element) {
 			console.log(profile);
 			val = 0;
 			var account = "google";
-			var account_id = profile.getId();
+			var account_image = profile.getImageUrl();
 			var email = profile.getEmail();
 			var name = profile.getName();
-			console.log(account, account_id, email, name, val);
-			// loginWithSocialMedia(account, account_id, email, name, val);
+			console.log(account, account_image, email, name);
 		},
 		function (error) {
 			// alert(JSON.stringify(error, undefined, 2));

@@ -17,14 +17,14 @@ $('.chat_icon').click(function() {
       });
       attachSignin(document.getElementById('customBtn'));
     });
-  // console.log(pageidentifier);
 };
 
+
 function attachSignin(element) {
-    console.log(element.id);
     auth2.attachClickHandler(element, {},
         function(googleUser) {
           var profile = googleUser.getBasicProfile();
+          console.log(profile);
           val = 0;
           var account = "google";
           var account_id = profile.getId();
@@ -374,4 +374,10 @@ var compare_duration = function (check1, check2) {
 var compare_duration2 = function (check1, check2) {
 	if (check1 > check2) return true;
 	else return false;
+}
+
+function schedule(){
+	console.log(document.getElementById('follow_date').value);
+	console.log(document.getElementById('follow_stime').value);
+	console.log(document.getElementById('follow_etime').value);
 }

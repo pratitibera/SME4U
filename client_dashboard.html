@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+   <head>
+      <!-- Mobile Specific Meta -->
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta charset="UTF-8">
+      <!-- Site Title -->
+      <title>AFFABLE || CLIENT</title>
+      <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700|Roboto:400,500" rel="stylesheet">
+      <!--fontawesome-->
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap">
+      <!-- Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/bootstrap.css">
+      <!-- Owl carousel --->
+      <link rel="stylesheet" href="css/owl.carousel.css">
+      <!--Flickity carousel --->
+      <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+      <!-- Chatbot-->
+      <link rel="stylesheet" href="css/jquery.convform.css">
+      <!--Page css -->
+      <link rel="stylesheet" href="css/style.css">
+      <style>
+         ::placeholder {
+         color: #38489E;
+         opacity: 1; /* Firefox */
+         }
+         :-ms-input-placeholder { /* Internet Explorer 10-11 */
+         color: #38489E;
+         }
+         ::-ms-input-placeholder { /* Microsoft Edge */
+         color: #38489E;
+         } 
+      </style>
+   </head>
+   <body data-spy="scroll" data-target=".navbar" data-offset="50">
+      <div class="chat_icon">
+         <img src="images\chatbot.jpg" style="width: 100px; height: 100px; border-radius: 50%;">
+      </div>
+      <div class="chat_box">
+         <div style="height: 10vh; background: #F3834B; border-top-left-radius: 15px; border-top-right-radius: 15px; padding: 15px; color: white; font-weight: bold;">
+            Need assistance? Let's chat!
+         </div>
+         <div class="my-conv-form-wrapper">
+            <form action="" method="GET" class="hidden">
+               <select data-conv-question="Hello! How can I help you" name="category">
+                  <option value="Client">Client ?</option>
+                  <option value="SME">SME ?</option>
+               </select>
+               <div data-conv-fork="category">
+                  <div data-conv-case="Client">
+                     <input type="text" name="request" data-conv-question="Please, put forth your request">    
+                  </div>
+                  <div data-conv-case="SME" data-conv-fork="first-question2">
+                     <input type="text" name="skillset" data-conv-question="Please, enter your skillset"> 
+                  </div>
+               </div>
+               <input type="text" name="name" data-conv-question="Please, Enter your name">
+               <input type="text" data-conv-question="Hi {name}, <br> It's a pleasure to meet you." data-no-answer="true">
+               <input data-conv-question="Enter your e-mail" data-pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" type="email" name="email" required placeholder="What's your e-mail?">
+               <select data-conv-question="Please Confirm">
+                  <option value="Yes">Confirm</option>
+               </select>
+            </form>
+         </div>
+      </div>
+      <!-- Start Header Area -->
+      <header class="default-header" style="background-color: #38489E;">
+         <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container sme_dashboard">
+               <a class="navbar-brand" href="index.html">
+                  <!-- <img src="images/logo.png" alt="" style="max-width: 50%;"> -->
+               </a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="fa fa-bars"></span>
+               </button>
+               <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
+                  <ul class="navbar-nav sme_dashboard_navbar">
+                     <li><a href="#">CONSULTATIONS</a></li>
+                     <!-- <li><a href="#" data-toggle="modal" data-target="#postQuestion">POST YOUR REQUEST</a></li> -->
+                     <li><a href="#section2">FAQS</a></li>
+                     <li><a href="#section4">MESSAGES</a></li>
+                     <li class="notifications_humberger"><a href="#section3">NOTIFICATIONS</a></li>
+                     <li class="dropdown profile_humberger">
+                        <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        ACCOUNT</i>
+                        </a>
+                        <div class="dropdown-menu">
+                           <!-- <a class="dropdown-item" href="#">View Profile</a> -->
+                           <a class="dropdown-item" href="#" type="button" data-toggle="modal" data-target="#passwordChangeUser">Change Password</a>
+                           <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                     </li>
+                     <li class="notifications"><a href="#"><i class="fas fa-bell fa-2x"></i></a></li>
+                     <li class="dropdown profile">
+                        <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                        <i class="fas fa-user-circle fa-2x"></i>
+                        </a>
+                        <div class="dropdown-menu">
+                           <!-- <a class="dropdown-item" href="#">View Profile</a> -->
+                           <a class="dropdown-item" href="#" type="button" data-toggle="modal" data-target="#passwordChangeUser">Change Password</a>
+                           <a class="dropdown-item" href="#">Logout</a>
+                        </div>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <!-- End Header Area -->
+      <!-- Start client request section -->
+      <br><br><br>
+      <section class="section-gap" id="section4">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-sm-3 post_request" style="/* box-shadow: -5px -4px 3px 0px rgba(255, 255, 255, 0.425),
+                  5px 4px 3px 0px rgba(88, 88, 88, 0.425); */ padding: 0px; background-color: #fff;">
+                  <div>
+                     <h1>Request for a SME</h1>
+                     <h5>Send the topic and question to consult our SME</h5>
+                     <img src="images/how_it_works_4.jpg">
+                  </div>
+                  <button class="btn" data-toggle="modal" data-target="#postQuestion">POST A REQUEST</button>
+               </div>
+               <div class="col-sm-9">
+                  <div class="row">
+                     <div class="col-sm-6 client_request">
+                        <h1>requests</h1>
+                        <button class="accordion">Noise Pollution</button>
+                        <div class="panel">
+                           <div class="profile_section">
+                              <div class="form">
+                                 <form>
+                                    <div class="inputfield terms">
+                                       <label>Request ID: </label>
+                                       <label style="width: 100%;">1150012</label>
+                                    </div>
+                                    <div class="inputfield terms">
+                                       <label>Category: </label>
+                                       <label style="width: 100%;">Real Estate</label>
+                                    </div>
+                                    <div class="inputfield">
+                                       <label>Question</label>
+                                       <label style="width: 100%;">How can I apply for a scholarship in Kemerovo state medical university?</label>
+                                    </div>
+                                    <div class="inputfield">
+                                       <label>Seen by</label>
+                                       <label style="width: 100%;">Pratiti Bera</label>
+                                    </div>
+                                    <div class="inputfield">
+                                       <label>Status</label>
+                                       <label style="width: 100%;">Accepted</label>
+                                    </div>
+                                    <div class="inputfield">
+                                       <label>SME's reply</label>
+                                       <label style="width: 100%;">Paragraphs are usually represented in visual media as blocks of text separated from adjacent blocks by blank lines and/or first-line indentation, but HTML paragraphs can be any structural grouping of related content, such as images or form fields.</label>
+                                    </div>
+                                    <div class="inputfield">
+                                       <label>Consultation status</label>
+                                       <label style="width: 100%;">Pending</label>
+                                    </div>
+                                    <div class="inputfield">
+                                       <input type="button" value="Confirm consultation" class="btn" data-toggle="modal" data-target="#chooseSlot">
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                        <button class="accordion">Patriotism</button>
+                        <div class="panel"></div>
+                        <button class="accordion">Time and Tide Wait for none</button>
+                        <div class="panel"></div>
+                        <button class="accordion">Women Empowerment</button>
+                        <div class="panel"></div>
+                        <button class="accordion">Environment Pollution</button>
+                        <div class="panel"></div>
+                     </div>
+                     <div class="col-sm-6 client_request">
+                        <h1>consultations</h1>
+                        <button class="accordion">Consultation ID 1</button>
+                        <div class="panel">
+                           <div class="profile_section">
+                              <div class="form">
+                                 <form>
+                                    <div class="inputfield terms">
+                                       <label>Consultation ID: </label>
+                                       <label style="width: 100%;">1150012</label>
+                                    </div>
+                                    <div class="inputfield terms">
+                                       <label>Category: </label>
+                                       <label style="width: 100%;">Real Estate</label>
+                                    </div>
+                                    <div class="inputfield">
+                                       <label>Question</label>
+                                       <label style="width: 100%;">How can I apply for a scholarship in Kemerovo state medical university?</label>
+                                    </div>
+                                    <div class="inputfield">
+                                       <label>SME</label>
+                                       <label style="width: 100%;">Pratiti Bera</label>
+                                    </div>
+                                    <div class="inputfield">
+                                       <label>Mode</label>
+                                       <label style="width: 100%;">Call</label>
+                                    </div>
+                                    <div class="inputfield">
+                                       <label>Date</label>
+                                       <label style="width: 100%;">27/02/2021</label>
+                                    </div>
+                                    <div class="inputfield">
+                                       <label>Time</label>
+                                       <label style="width: 100%;">10:00 am</label>
+                                    </div>
+                                    <div class="inputfield">
+                                       <input type="button" value="Click to connect" class="btn" data-toggle="modal" data-target="#connectToChat" data-backdrop="static" data-keyboard="false">
+                                    </div>
+                                 </form>
+                              </div>
+                           </div>
+                        </div>
+                        <button class="accordion">Consultation ID 2</button>
+                        <div class="panel"></div>
+                        <button class="accordion">Consultation ID 3</button>
+                        <div class="panel"></div>
+                        <button class="accordion">Consultation ID 4</button>
+                        <div class="panel"></div>
+                        <button class="accordion">Consultation ID 5</button>
+                        <div class="panel"></div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- Start FAQ section -->
+      <section id="section4">
+         <div class="container faqs">
+            <h1>Frequently Asked Questions</h1>
+            <div class="accordion">
+               <div class="contentBx">
+                  <div class="label">How is the weather in Oblast, Russia ?</div>
+                  <div class="content">
+                     <p>We connect you to Subject Matter Experts from various areas of expertise who will answer your questions and help you in taking right decisions in all your phases of life.</p>
+                  </div>
+               </div>
+               <div class="contentBx">
+                  <div class="label">How can I apply for a scholarship in Kemerovo state medical university?</div>
+                  <div class="content">
+                     <p></p>
+                  </div>
+               </div>
+               <div class="contentBx">
+                  <div class="label">Does the Kemerovo State Medical University provide post graduate courses?</div>
+                  <div class="content">
+                     <p></p>
+                  </div>
+               </div>
+               <div class="contentBx">
+                  <div class="label">What is Kemerovo State Medical University fee structure?</div>
+                  <div class="content">
+                     <p></p>
+                  </div>
+               </div>
+               <div class="contentBx">
+                  <div class="label">What is Kemerovo state medical college admission procedure?</div>
+                  <div class="content">
+                     <p></p>
+                  </div>
+               </div>
+               <div class="contentBx">
+                  <div class="label">What is Kemerovo state medical university ranking ?</div>
+                  <div class="content">
+                     <p></p>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </section>
+      <!-- end FAQ section -->
+      <br>
+      <!-- end client request section -->
+      <!-- modal for user change password --->
+      <div class="modal fade" id="passwordChangeUser" role="dialog">
+         <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+               <div class="modal-body">
+                  <div class="profile_section">
+                     <div class="title">CHANGE PASSWORD</div>
+                     <div class="form">
+                        <form>
+                           <div class="inputfield">
+                              <label>Current Password</label>
+                              <input type="Password" class="input" required="">
+                           </div>
+                           <div class="inputfield">
+                              <label>New Password</label>
+                              <input type="Password" class="input" required="">
+                           </div>
+                           <div class="inputfield">
+                              <label>Confirm Password</label>
+                              <input type="Password" class="input" required="">
+                           </div>
+                           <div class="row">
+                              <div class="col-sm-3"></div>
+                              <div class="col-sm-6">
+                                 <div class="inputfield">
+                                    <input type="submit" value="SAVE PASSWORD" class="btn">
+                                 </div>
+                              </div>
+                              <div class="col-sm-3"></div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--end modal for user change password --->
+      <!-- modal for post question --->
+      <div class="modal fade" id="postQuestion" role="dialog">
+         <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+               <!--  <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  
+                  </div> -->
+               <div class="modal-body">
+                  <div class="profile_section" style="padding: 10px;">
+                     <div class="title">POST YOUR REQUEST</div>
+                     <div class="form">
+                        <form>
+                           <div class="inputfield">
+                              <label></label>
+                              <label>remabimal0801@gmail.com</label>
+                           </div>
+                           <div class="inputfield">
+                              <label></label>
+                              <div class="custom_select">
+                                 <select required="">
+                                    <option value="">select category</option>
+                                    <option value="male">Category A</option>
+                                    <option value="female">Category B</option>
+                                    <option value="female">Category C</option>
+                                 </select>
+                              </div>
+                           </div>
+                           <div class="inputfield">
+                              <label></label>
+                              <input type="text" class="input" required="" placeholder="topic">
+                           </div>
+                           <div class="inputfield">
+                              <label></label>
+                              <textarea class="textarea" required="" placeholder="type your question"></textarea>
+                           </div>
+                           <div class="inputfield terms">
+                              <label class="check">
+                              <input type="checkbox" required="">
+                              <span class="checkmark"></span>
+                              </label>
+                              <p style="margin-top: -2px;">I confirm to consult your SME</p>
+                           </div>
+                           <div class="row">
+                              <div class="col-sm-3"></div>
+                              <div class="col-sm-6">
+                                 <div class="inputfield">
+                                    <input type="submit" value="POST QUESTION" class="btn">
+                                 </div>
+                              </div>
+                              <div class="col-sm-3"></div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--end modal for post question --->
+      <!-- modal for choose slot --->
+      <div class="modal fade" id="chooseSlot" role="dialog">
+         <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+               <div class="modal-body">
+                  <div class="profile_section choose_slot">
+                     <div class="title">Proposed slots by SME: 150021</div>
+                     <div class="subtitle">How can I start my own startup with the least investment?</div>
+                     <div class="form">
+                        <form>
+                           <div class="inputfield terms">
+                              <label class="check">
+                                 <!-- <input type="checkbox" onclick="onlyOneDate(this);" name="date_choice" value="date1" id="date1"> -->
+                                 <!-- <span class="checkmark"></span> -->
+                              </label>
+                              <p style="margin-right: 10px; margin-left: 50px;">Date</p>
+                              <p style="margin-right: 35px; margin-left: 50px;">Start</p>
+                              <p style="margin-left: 25px;">End</p>
+                           </div>
+                           <div class="inputfield terms">
+                              <label class="check">
+                              <input type="checkbox" onclick="onlyOneDate(this);" name="date_choice" value="date1" id="date1">
+                              <span class="checkmark"></span>
+                              </label>
+                              <p><input type="button" value="10-02-2020" class="btn"></p>
+                              <p><input type="button" value="10:30am" class="btn"></p>
+                              <p><input type="button" value="11:30am" class="btn"></p>
+                           </div>
+                           <div class="inputfield terms">
+                              <label class="check">
+                              <input type="checkbox" onclick="onlyOneDate(this);" name="date_choice" value="date2" id="date2">
+                              <span class="checkmark"></span>
+                              </label>
+                              <p><input type="button" value="10-02-2020" class="btn"></p>
+                              <p><input type="button" value="10:30am" class="btn"></p>
+                              <p><input type="button" value="11:30am" class="btn"></p>
+                           </div>
+                           <div class="inputfield terms">
+                              <label class="check">
+                              <input type="checkbox" onclick="onlyOneDate(this);" name="date_choice" value="date3" id="date3">
+                              <span class="checkmark"></span>
+                              </label>
+                              <p><input type="button" value="10-02-2020" class="btn"></p>
+                              <p><input type="button" value="10:30am" class="btn"></p>
+                              <p><input type="button" value="11:30am" class="btn"></p>
+                           </div>
+                           <div class="row">
+                              <div class="col-sm-4"></div>
+                              <div class="col-sm-4">
+                                 <div class="inputfield">
+                                    <input type="submit" value="Submit" class="btn">
+                                 </div>
+                              </div>
+                              <div class="col-sm-4"></div>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--end modal for choose slot --->
+      <!-- modal for chat connect --->
+      <div class="modal fade" id="connectToChat" role="dialog">
+         <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+               <div class="modal-body" style="padding: 0px;">
+                  <div class="chat_modal container-fluid">
+                     <div class="row header_row">
+                        <div class="col-3 col-sm-3">
+                           <img src="images/img1.jpg">
+                        </div>
+                        <div class="col-8 col-sm-8">
+                           <h4>Marzia Mithila
+                              <button class="btn" type="button" data-dismiss="modal">Close</button>
+                           </h4>
+                        </div>
+                        <div class="col-1 col-sm-1" style="padding: 15px;">
+                           <div class="dropdown">
+                              <span class="fas fa-ellipsis-v"></span>
+                              <div class="dropdown-content">
+                                 <a href="#">Export chat</a>
+                                 <a href="#">Clear chat</a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="chat_body">
+                        <div id="user1">Hi</div>
+                        <div id="user2">Hello</div>
+                        <div id="user1">How are you?</div>
+                        <div id="user2">I am fine and what about you?</div>
+                        <div id="user1">I am also fine but I am getting bored here.</div>
+                        <div id="user2">So you can spend your time at youtube watching programming videos.</div>
+                        <div id="user2">I am sure you will learn something new.</div>
+                        <div id="user1">Ok Sure</div>
+                        <div id="user2">Don't forget to subscribe me.</div>
+                        <div id="user2">In case of any problem you can contact me via whatsapp 9064973840.</div>
+                     </div>
+                     <div class="row footer_row">
+                        <div class="col-9 col-sm-9" style="padding: 0px;">
+                           <textarea placeholder="Write a message"></textarea>
+                        </div>
+                        <div class="col-3 col-sm-3">
+                           <label for="upload-photo"><i class="fas fa-paperclip"></i></label>
+                           <input type="file" name="photo" id="upload-photo"/>
+                           <a href="#"><i class="fas fa-paper-plane"></i></a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!--end modal for chat connect --->
+      <!-- Start footer -->
+      <br><br>
+      <footer style="background-color: #f2f2f2">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-2">
+                  <h2><i><b>AFFABLE</b></i></h2>
+               </div>
+               <div class="col-md-5">
+                  <span style="color: #38489E;">Copyright © 2019, All Right Reserved Affable</span>
+               </div>
+               <div class="col-md-2"></div>
+               <div class="col-md-3 social_icons">
+                  <i class="fab fa-twitter"></i>
+                  <i class="fab fa-facebook"></i>
+                  <i class="fab fa-linkedin"></i>
+                  <i class="fab fa-pinterest"></i>
+                  <i class="fab fa-instagram"></i>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- end footer -->
+      <!--- Scripts section --->
+      <!-- sticky nav -->
+      <script src="js/jquery-2.2.4.min.js"></script>
+      <script src="js/jquery.convform.js"></script>
+      <script src="js/parallax.min.js"></script>
+      <script src="js/owl.carousel.min.js"></script>
+      <script src="js/isotope.pkgd.min.js"></script>
+      <script src="js/jquery.magnific-popup.min.js"></script>
+      <script src="js/jquery.sticky.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/pageHandler.js"></script>
+      <!-- For carousel --->
+      <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/easytimer@1.1.1/src/easytimer.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <!-- For accordion in FAQ section --->
+      <script>
+         var acc = document.getElementsByClassName("accordion");
+         var i;
+         
+         for (i = 0; i < acc.length; i++) {
+           acc[i].addEventListener("click", function() {
+             this.classList.toggle("active");
+             var panel = this.nextElementSibling;
+             if (panel.style.display === "block") {
+               panel.style.display = "none";
+             } else {
+               panel.style.display = "block";
+             }
+           });
+         }
+      </script>
+      <script>
+         function clickEvent(first,last){
+             if(first.value.length){
+                 document.getElementById(last).focus();
+             }
+         }
+      </script>
+   </body>
+</html>

@@ -1,52 +1,54 @@
-$('.chat_icon').click(function() {
-		$('.chat_box').toggleClass('active');
+$('.chat_icon').click(function () {
+	$('.chat_box').toggleClass('active');
+});
+
+$('.my-conv-form-wrapper').convform({
+	selectInputStyle: 'disable'
+})
+
+var googleUser = {};
+
+var startApp = function (page) {
+	gapi.load('auth2', function () {
+		// Retrieve the singleton for the GoogleAuth library and set up the client.
+		auth2 = gapi.auth2.init({
+			client_id: '1020161679527-t9736hq9ahb33ilojdrb0qsuac9g2mc8.apps.googleusercontent.com',
+			cookiepolicy: 'single_host_origin',
+			// Request scopes in addition to 'profile' and 'email'
+			//scope: 'additional_scope'
+		});
+		attachSignin(document.getElementById('customBtn'));
 	});
-
-	$('.my-conv-form-wrapper').convform({selectInputStyle: 'disable'})
-
-	var googleUser = {};
-
-	var startApp = function (page) {
-  gapi.load('auth2', function(){
-      // Retrieve the singleton for the GoogleAuth library and set up the client.
-      auth2 = gapi.auth2.init({
-        client_id: '1020161679527-t9736hq9ahb33ilojdrb0qsuac9g2mc8.apps.googleusercontent.com',
-        cookiepolicy: 'single_host_origin',
-        // Request scopes in addition to 'profile' and 'email'
-        //scope: 'additional_scope'
-      });
-      attachSignin(document.getElementById('customBtn'));
-    });
 };
 
 
 function attachSignin(element) {
-    auth2.attachClickHandler(element, {},
-        function(googleUser) {
-          var profile = googleUser.getBasicProfile();
-          console.log(profile);
-          val = 0;
-          var account = "google";
-          var account_id = profile.getId();
-          var email = profile.getEmail();
-          var name = profile.getName();
-          console.log(account, account_id, email, name, val);
-          // loginWithSocialMedia(account, account_id, email, name, val);
-        },
-        function(error) {
-          // alert(JSON.stringify(error, undefined, 2));
-          swal({
-          title: 'Oops !!!',
-          text: 'Your authorisation has failed',
-          imageUrl: 'https://firebasestorage.googleapis.com/v0/b/putatoeapp/o/Tshirt%2F1231601715117658?alt=media&token=4f3ed340-9128-4b40-89bd-f0336876b52b',
-          imageSize: '200x200',
-          imageAlt: 'custom image',
-          timer: 3000,
-          showConfirmButton: false
-        })
-        }
-    );
-  }
+	auth2.attachClickHandler(element, {},
+		function (googleUser) {
+			var profile = googleUser.getBasicProfile();
+			console.log(profile);
+			val = 0;
+			var account = "google";
+			var account_id = profile.getId();
+			var email = profile.getEmail();
+			var name = profile.getName();
+			console.log(account, account_id, email, name, val);
+			// loginWithSocialMedia(account, account_id, email, name, val);
+		},
+		function (error) {
+			// alert(JSON.stringify(error, undefined, 2));
+			swal({
+				title: 'Oops !!!',
+				text: 'Your authorisation has failed',
+				imageUrl: 'https://firebasestorage.googleapis.com/v0/b/putatoeapp/o/Tshirt%2F1231601715117658?alt=media&token=4f3ed340-9128-4b40-89bd-f0336876b52b',
+				imageSize: '200x200',
+				imageAlt: 'custom image',
+				timer: 3000,
+				showConfirmButton: false
+			})
+		}
+	);
+}
 
 
 //Function to hide sign in methods and display otp box
@@ -143,19 +145,18 @@ function onlyOne(checkbox) {
 		} else {
 			document.getElementById('appointment').style.display = "none";
 			document.getElementById('emailResponse').style.display = "none";
-			
-		}
-	} else {
-		if (document.getElementById(mode_id).checked){
-			document.getElementById('appointment').style.display = "none";
-		document.getElementById('emailResponse').style.display = "block";
-		document.getElementById('savebutton').style.visibility = "hidden";
 
 		}
-		else{
+	} else {
+		if (document.getElementById(mode_id).checked) {
 			document.getElementById('appointment').style.display = "none";
-		document.getElementById('emailResponse').style.display = "none";
-		document.getElementById('savebutton').style.visibility = "hidden";
+			document.getElementById('emailResponse').style.display = "block";
+			document.getElementById('savebutton').style.visibility = "hidden";
+
+		} else {
+			document.getElementById('appointment').style.display = "none";
+			document.getElementById('emailResponse').style.display = "none";
+			document.getElementById('savebutton').style.visibility = "hidden";
 		}
 	}
 }
@@ -376,8 +377,52 @@ var compare_duration2 = function (check1, check2) {
 	else return false;
 }
 
-function schedule(){
-	console.log(document.getElementById('follow_date').value);
-	console.log(document.getElementById('follow_stime').value);
-	console.log(document.getElementById('follow_etime').value);
+function schedule() {
+	var follow_date = document.getElementById('follow_date').value;
+	var follow_start = document.getElementById('follow_stime').value;
+	var follow_end = document.getElementById('follow_etime').value;
+
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth() + 1;
+	var yyyy = today.getFullYear();
+
+	if (dd < 10) {
+		dd = '0' + dd;
+	}
+
+	if (mm < 10) {
+		mm = '0' + mm;
+	}
+
+	today = yyyy + '-' + mm + '-' + dd;
+	var follow_date_check = compare_dates(new Date(follow_date), new Date(today));
+	if (follow_date_check == true) {
+		var split_follow_start = follow_start.split(":");
+		var split_follow_end = follow_end.split(":");
+		if (split_follow_start[0] < split_follow_end[0]) {
+			if(split_follow_end[0] - split_follow_start[0] == 1){
+				if(split_follow_end[1] == split_follow_start[1]){
+					document.getElementById('schedule_follow_up').setAttribute('data-dismiss', 'modal');
+					// values accepted
+				}
+				else{
+					alert("Give atleast one hour");
+				}
+			}
+			else{
+				document.getElementById('schedule_follow_up').setAttribute('data-dismiss', 'modal');
+				// Values accepted
+			}
+		}
+		else{
+			alert("Give atleast one hour");
+		}
+	}
+	else{
+		alert("Please enter a future date");
+	}
+	document.getElementById('follow_date').innerHTML = "";
+	document.getElementById('follow_stime').innerHTML = "";
+	document.getElementById('follow_etime').innerHTML = "";
 }

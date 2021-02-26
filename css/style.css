@@ -4044,7 +4044,7 @@ h6 {
 @media (max-width: 490px) {
     .signup_section {
         padding: 15px;
-        margin-top: -40px;
+        margin-top: 0px;
     }
     .modal_content_footer {
         margin-top: -10px;
@@ -4407,6 +4407,7 @@ h6 {
 
 .profile_section .form .inputfield p .btn {
     background: #38489E;
+    margin-bottom: 30px;
 }
 
 .profile_section .form .inputfield:last-child {

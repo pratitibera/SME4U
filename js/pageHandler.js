@@ -425,3 +425,30 @@ function schedule() {
 	document.getElementById('follow_stime').innerHTML = "";
 	document.getElementById('follow_etime').innerHTML = "";
 }
+
+
+
+function userSignin(){
+	document.getElementById('userSignin').setAttribute('data-dismiss', 'modal');
+	document.getElementById('userSignin').setAttribute('data-target', '#signInUser');
+	document.getElementById('userSignin').setAttribute('data-toggle', 'modal');
+	
+}
+function SMESignin(){
+	document.getElementById('SMESignin').setAttribute('data-dismiss', 'modal');
+	document.getElementById('SMESignin').setAttribute('data-target', '#signInSME');
+	document.getElementById('SMESignin').setAttribute('data-toggle', 'modal');
+	
+}
+
+function userSignup(){
+	document.getElementById('userSignup').setAttribute('data-dismiss', 'modal');
+	document.getElementById('userSignup').setAttribute('data-target', '#registerUser');
+	document.getElementById('userSignup').setAttribute('data-toggle', 'modal');
+}
+
+function SMESignup(){
+	document.getElementById('SMESignup').setAttribute('data-dismiss', 'modal');
+	document.getElementById('SMESignup').setAttribute('data-target', '#registerSME');
+	document.getElementById('SMESignup').setAttribute('data-toggle', 'modal');
+}

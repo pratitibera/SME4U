@@ -5012,11 +5012,18 @@ transform: translate(-50%, -50%);
 
 .link_wrapper{
 position: fixed;
+margin-left: 15px;
 }
 
+@media (max-width: 991px) {
+    .link_wrapper{
+        margin-left: 35px;
+    }
+}
 .link{
 display: block;
 width: 130px;
+/* width: 50%; */
 height: 40px;
 line-height: 40px;
 font-weight: bold;

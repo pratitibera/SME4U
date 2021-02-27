@@ -21,7 +21,23 @@ var startApp = function (page) {
 	});
 };
 
+var element1 = document.getElementById("SMERegister");
+console.log(element1);
+var element2 = document.getElementById("UserRegister");
+console.log(element2);
+if(screen.width < 992){
+	console.log(screen.width);
+   element1.classList.add("col-6");
+   element1.classList.add("col-sm-6");
+   element1.classList.add("d-flex");
+   element1.classList.add("justify-content-center");
 
+   element2.classList.add("col-6");
+   element2.classList.add("col-sm-6");
+   element2.classList.add("d-flex");
+   element2.classList.add("justify-content-center");
+   
+}
 function attachSignin(element) {
 	auth2.attachClickHandler(element, {},
 		function (googleUser) {

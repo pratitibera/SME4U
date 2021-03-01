@@ -17,7 +17,10 @@ var startApp = function (page) {
 			// Request scopes in addition to 'profile' and 'email'
 			//scope: 'additional_scope'
 		});
-		attachSignin(document.getElementById('customBtn'));
+		attachSignin(document.getElementById('customBtnuserReg'));
+		attachSignin(document.getElementById('customBtnSMEReg'));
+		attachSignin(document.getElementById('customBtnuserLogin'));
+		attachSignin(document.getElementById('customBtnSMELogin'));
 	});
 };
 

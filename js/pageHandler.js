@@ -17,7 +17,8 @@ var startApp = function (page) {
 			// Request scopes in addition to 'profile' and 'email'
 			//scope: 'additional_scope'
 		});
-		attachSignin(document.getElementById('customBtnuserReg'));
+		console.log(document.getElementById('customBtn'));
+		attachSignin(document.getElementById('customBtn'));
 		// attachSignin(document.getElementById('customBtnSMEReg'));
 		// attachSignin(document.getElementById('customBtnuserLogin'));
 		// attachSignin(document.getElementById('customBtnSMELogin'));
@@ -42,6 +43,7 @@ if(screen.width < 992){
    
 }
 function attachSignin(element) {
+	console.log(element);
 	auth2.attachClickHandler(element, {},
 		function (googleUser) {
 			var profile = googleUser.getBasicProfile();

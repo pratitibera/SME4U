@@ -22,6 +22,11 @@
       <link rel="stylesheet" href="css/jquery.convform.css">
       <!--Page css -->
       <link rel="stylesheet" href="css/style.css">
+      <style>
+         body{
+            background-color: #f4f4f4;
+         }
+      </style>
    </head>
    <body data-spy="scroll" data-target=".navbar">
       <div class="chat_icon">
@@ -66,13 +71,13 @@
                </button>
                <div class="collapse navbar-collapse justify-content-end align-items-center" id="navbarSupportedContent">
                   <ul class="navbar-nav sme_dashboard_navbar">
-                     <li><a class="active" href="#section1" onclick="viewSections();">CLIENT REQUESTS</a></li>
-                     <li><a href="#section1">CONSULTATIONS</a></li>
-                     <li><a href="#section2">TESTIMONIALS</a></li>
-                     <li><a href="webinar.html">WEBINARS</a></li>
-                     <li><a href="#section4">MESSAGES</a></li>
-                     <li class="notifications_humberger"><a href="#section3">NOTIFICATIONS</a></li>
-                     <li class="dropdown profile_humberger">
+                     <li data-toggle="collapse" data-target="#navbarSupportedContent"><a class="active" href="#section1" onclick="viewSections();">CLIENT REQUESTS</a></li>
+                     <li data-toggle="collapse" data-target="#navbarSupportedContent"><a href="#section1">CONSULTATIONS</a></li>
+                     <li data-toggle="collapse" data-target="#navbarSupportedContent"><a href="#section2">TESTIMONIALS</a></li>
+                     <li data-toggle="collapse" data-target="#navbarSupportedContent"><a href="webinar.html">WEBINARS</a></li>
+                     <li data-toggle="collapse" data-target="#navbarSupportedContent"><a href="#section4">MESSAGES</a></li>
+                     <li data-toggle="collapse" data-target="#navbarSupportedContent" class="notifications_humberger"><a href="#section3">NOTIFICATIONS</a></li>
+                     <li data-toggle="collapse" data-target="#navbarSupportedContent" class="dropdown profile_humberger">
                         <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                         ACCOUNT</i>
                         </a>
@@ -82,12 +87,12 @@
                            <a class="dropdown-item" href="#">Logout</a>
                         </div>
                      </li>
-                     <li class="notifications"><a href="#"><i class="fas fa-bell fa-2x"></i></a></li>
-                     <li class="dropdown profile">
+                     <li data-toggle="collapse" data-target="#navbarSupportedContent" class="notifications"><a href="#"><i class="fas fa-bell fa-2x"></i></a></li>
+                     <li data-toggle="collapse" data-target="#navbarSupportedContent" class="dropdown profile">
                         <a class="dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                         <i class="fas fa-user-circle fa-2x"></i>
                         </a>
-                        <div class="dropdown-menu" style="background-color: #f7f7f7;">
+                        <div class="dropdown-menu sme_dashboard_dropdown">
                            <a class="dropdown-item" href="#sme_profile">View Profile</a>
                            <a class="dropdown-item" href="#" type="button" data-toggle="modal" data-target="#passwordChangeSME">Change Password</a>
                            <a class="dropdown-item" href="#">Logout</a>
@@ -104,15 +109,6 @@
       <section class="section-gap" id="section1">
          <div class="container-fluid">
             <div class="row">
-               <div class="col-sm-3 post_request" style="/* box-shadow: -5px -4px 3px 0px rgba(255, 255, 255, 0.425),
-                  5px 4px 3px 0px rgba(88, 88, 88, 0.425); */ padding: 0px; background-color: #fff;">
-                  <div>
-                     <h1>Book a webinar</h1>
-                     <h5>Send the topic and question to consult our SME</h5>
-                     <img src="images/how_it_works_4.jpg">
-                  </div>
-                  <button class="btn" data-toggle="modal" data-target="#postWebinar">POST A WEBINAR</button>
-               </div>
                <div class="col-sm-9">
                   <div class="row">
                      <div class="col-12 col-sm-6 client_request">
@@ -140,18 +136,13 @@
                                        <textarea class="textarea" required="" id="SMEthoughts"></textarea>
                                     </div>
                                     <div class="row">
-                                       <div class="col-sm-2"></div>
+                                       <div class="col-sm-4"></div>
                                        <div class="col-sm-4">
                                           <div class="inputfield">
                                              <input type="button" value="ACCEPT" class="btn" onclick="thoughtChecker();">
                                           </div>
                                        </div>
-                                       <div class="col-sm-4">
-                                          <div class="inputfield">
-                                             <input type="button" value="DECLINE" class="btn" data-toggle="modal" data-target="#declineRequest" style="background-color: #F3834B">
-                                          </div>
-                                       </div>
-                                       <div class="col-sm-2"></div>
+                                       <div class="col-sm-4"></div>
                                     </div>
                                  </form>
                               </div>
@@ -203,12 +194,12 @@
                                     </div>
                                     <div class="row">
                                        <div class="col-sm-2"></div>
-                                       <div class="col-sm-4">
+                                       <div class="col-6 col-sm-4">
                                           <div class="inputfield">
                                              <input type="button" value="Connect" class="btn" data-toggle="modal" data-target="#connectToChat">
                                           </div>
                                        </div>
-                                       <div class="col-sm-4">
+                                       <div class="col-6 col-sm-4">
                                           <div class="inputfield">
                                              <input type="button" value="Cancel" class="btn" id="cancelConsultation_1" onclick="cancelConsultation(this.id);">
                                           </div>
@@ -230,6 +221,15 @@
                      </div>
                   </div>
                </div>
+               <div class="col-sm-3 post_request" style="/* box-shadow: -5px -4px 3px 0px rgba(255, 255, 255, 0.425),
+                  5px 4px 3px 0px rgba(88, 88, 88, 0.425); */ padding: 0px;">
+                  <div>
+                     <h1>Book a webinar</h1>
+                     <h5>Send the topic and question to consult our SME</h5>
+                     <img src="images/how_it_works_4.jpg">
+                  </div>
+                  <button class="btn" data-toggle="modal" data-target="#postWebinar">POST A WEBINAR</button>
+               </div>
             </div>
          </div>
       </section>
@@ -238,7 +238,7 @@
             <div class="grp_box" style="
                background: #f5f5f5;
                padding-top: 60px;
-               height: 600px;
+               /* height: 600px; */
                -webkit-transition: all ease-in-out 0.5s;
                -o-transition: all ease-in-out 0.5s;
                transition: all ease-in-out 0.5s; text-align: center;">
@@ -356,7 +356,7 @@
       <br>
       <!--Profile section of SME--->
       <div class="container" id="sme_profile">
-         <div class="profile_section">
+         <div class="profile_section" style="box-shadow: -5px -4px 3px 0px rgba(255, 255, 255, 0.425), 5px 4px 3px 0px rgba(255, 255, 255, 0.425); background-color: #f4f4f4;">
             <div class="title">YOUR PROFILE<span type="button" data-toggle="modal" data-target="#edit_profile"><i class="fas fa-pen" style="margin-left: 10px;"></i></span></div>
             <div class="form">
                <form>
@@ -394,14 +394,14 @@
                         </div>
                         <div class="inputfield">
                            <label>Upload profile photo</label>
-                           <a href="#"><label>View Profile photo</label></a>
+                           <label>View Profile photo</label>
                         </div>
                         <div class="inputfield">
                            <label>Upload resume</label>
-                           <a href="#"><label>View resume</label></a>
+                           <label>View resume</label>
                         </div>
                      </div>
-                     <div class="col-sm-5" style="border-left: 1px solid #38489E;">
+                     <div class="col-sm-5 second_profile_section">
                         <div class="inputfield">
                            <label>Category</label>
                            <label>Category B</label>
@@ -920,15 +920,27 @@
             <div class="modal-content">
                <div class="modal-body" style="padding: 0px;">
                   <div class="chat_modal container-fluid">
-                     <div class="row header_row">
-                        <div class="col-3 col-sm-3">
-                           <img src="images/img1.jpg">
+                     <div class="row header_row modal-header">
+                        <div class="col-3 col-sm-5 sme_detail">
+                           <div class="row">
+                              <div class="col-12 col-sm-5" style="text-align: center;">
+                                 <img src="images/img1.jpg">
+                              </div>
+                              <div class="col-12 col-sm-7 sme_name">
+                                 <h4>User1</h4>
+                              </div>
+                           </div>
                         </div>
-                        <div class="col-8 col-sm-8">
-                           <h4>Marzia Mithila
+                        <div class="col-6 col-sm-5 sme_operations" style="padding: 0px;">
+                           <h4>
                               <button class="btn" type="button" data-dismiss="modal" data-toggle="modal" data-target="#followup">Follow up</button>
                               <button class="btn" type="button" data-dismiss="modal">Close</button>
                            </h4>
+                        </div>
+                        <div class="col-1 col-sm-1" style="padding: 15px;">
+                           <div>
+                              <span class="fas fa-phone"></span>
+                           </div>
                         </div>
                         <div class="col-1 col-sm-1" style="padding: 15px;">
                            <div class="dropdown">
@@ -938,6 +950,9 @@
                                  <a href="#">Clear chat</a>
                               </div>
                            </div>
+                        </div>
+                        <div class="col-12 sme_name_mobile text-center">
+                           <h4>User 1</h4>
                         </div>
                      </div>
                      <div class="chat_body">
@@ -953,10 +968,10 @@
                         <div id="user2">In case of any problem you can contact me via whatsapp 9064973840.</div>
                      </div>
                      <div class="row footer_row">
-                        <div class="col-9 col-sm-9" style="padding: 0px;">
+                        <div class="col-8 col-sm-9" style="padding: 0px;">
                            <textarea placeholder="Write a message"></textarea>
                         </div>
-                        <div class="col-3 col-sm-3">
+                        <div class="col-4 col-sm-3">
                            <label for="upload-photo"><i class="fas fa-paperclip"></i></label>
                            <input type="file" name="photo" id="upload-photo"/>
                            <a href="#"><i class="fas fa-paper-plane"></i></a>
@@ -968,6 +983,7 @@
          </div>
       </div>
       <!--end modal for chat connect --->
+      
        <!-- modal for follow up --->
       <div class="modal fade" id="followup" role="dialog">
          <div class="modal-dialog">

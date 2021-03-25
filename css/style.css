@@ -1058,6 +1058,11 @@ th {
     background: transparent
 }
 
+.sme_dashboard_dropdown{
+    background-color: #f7f7f7;
+    margin-left: -50px;
+}
+
 @media (max-width: 991px) {
     .default-header {
         background: #38489E
@@ -4444,12 +4449,17 @@ h6 {
         margin-right: 20px;
         margin-top: 9px;
     }
+    .second_profile_section{
+        border-left: 1px solid #38489E;
+    }
 }
 
 @media (max-width:420px) {
     .profile_section .form .inputfield {
-        flex-direction: column;
-        align-items: flex-start;
+        
+       /*  align-items: flex-start; */
+        display: flex;
+    flex-direction: row;
     }
     .profile_section .form .inputfield label {
         margin-bottom: 5px;
@@ -4714,30 +4724,26 @@ h6 {
     -moz-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.25);
     -webkit-box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.25);
     box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.25);
-    padding: 8px;
+    /* padding: 8px; */
 }
 
-.chat_modal .header_row img {
+.chat_modal .header_row .sme_detail img {
     width: 80%;
     border-radius: 50%;
     margin-right: 12px;
     margin-left: 20px;
 }
 
-.chat_modal .header_row .col-sm-8 {
-    padding: 15px;
-}
-
-.chat_modal .header_row .col-sm-8 h4 {
+.chat_modal .header_row .sme_detail h4 {
     color: #38489E;
     font-weight: 600;
 }
 
-.chat_modal .header_row .col-sm-8 h4 button {
+.chat_modal .header_row .sme_operations button {
     background-color: #F3834B;
     float: right;
     margin-right: 5px;
-    margin-top: -10px;
+    /* margin-top: -10px; */
 }
 
 .chat_modal .dropdown {
@@ -4840,6 +4846,52 @@ h6 {
     margin-right: 0px;
     font-size: 26px;
     color: #F3834B;
+}
+@media screen and (min-width: 401px){
+    .chat_modal .header_row .sme_detail h4 {
+    margin-top: 20px;
+}
+.chat_modal .header_row .sme_operations {
+    padding: 15px;
+}
+.chat_modal .header_row {
+    padding: 8px;
+}
+.chat_modal .header_row .col-12.col-sm-7{
+    padding: 0px;
+}
+.sme_name_mobile{
+    display: none;
+}
+}
+
+@media screen and (max-width: 400px){
+    .chat_modal .header_row {
+    height: 110px;
+    /* margin-top: 5px; */
+}
+.chat_modal .header_row .sme_detail h4 {
+    font-size: 12px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+.sme_name{
+    display: none;
+}
+.sme_name_mobile{
+    display: block;
+}
+.chat_modal .header_row .sme_operations button {
+    font-size: 12px;
+    margin-top: 15px;
+}
+.chat_modal .footer_row label i {
+    font-size: 20px;
+}
+.chat_modal .footer_row a i {
+    font-size: 20px;
+}
+
 }
 
 

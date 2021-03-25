@@ -4853,6 +4853,7 @@ h6 {
 }
 .chat_modal .header_row .sme_operations {
     padding: 15px;
+    padding-top: 5px;
 }
 .chat_modal .header_row {
     padding: 8px;

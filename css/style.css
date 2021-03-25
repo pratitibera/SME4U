@@ -4892,6 +4892,9 @@ h6 {
 .chat_modal .footer_row a i {
     font-size: 20px;
 }
+.chat_modal .header_row .sme_operations {
+    padding: 0px;
+}
 
 }
 

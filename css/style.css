@@ -5108,3 +5108,73 @@ background: transparent;
 color: #fff;
 font-family: 'Open Sans Condensed', sans-serif;
 }
+
+
+/* video call styling */
+.video-call-screen{
+    background-color: black; 
+    height: 85vh;
+}
+.remote-screen img{
+    width: 100%; 
+    height: 85vh;
+}
+.call-handlers{
+    background-color: white; 
+    height: 15vh; 
+    padding: 20px;
+    text-align: center;
+}
+.call-handlers .button1{
+    background-color: #ea192b; 
+    height: 60px; 
+    width: 60px; 
+    border-radius: 50%; 
+    margin-right: 20px;
+}
+.call-handlers .button1 i{
+    font-size: 25px; 
+    color: white;
+}
+.call-handlers .button2{
+    background-color: white; 
+    height: 50px; 
+    width: 50px; 
+    border-radius: 50%; 
+    margin-right: 20px;
+}
+.call-handlers .button2 i{
+    font-size: 25px; 
+    color: #ea192b;
+}
+@media (min-width: 651px){
+    .local-screen{
+    position: absolute; 
+    width: 25%; 
+    bottom: 95px; 
+    right: 55px; 
+    padding: 10px; 
+    background-color: black;
+}
+.local-screen img{
+    width: 100%;
+}
+}
+@media (max-width: 650px) {
+    .video-call-screen{
+    background-color: black; 
+    height: 85vh;
+}
+.remote-screen img{
+    width: 100%; 
+    height: 40vh;
+}
+.local-screen{
+    padding: 13px; 
+    background-color: black;
+}
+.local-screen img{
+    width: 100%;
+    height: 40vh;
+}
+}

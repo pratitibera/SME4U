@@ -5122,7 +5122,7 @@ font-family: 'Open Sans Condensed', sans-serif;
 .call-handlers{
     background-color: white; 
     height: 15vh; 
-    padding: 20px;
+    padding: 10px;
     text-align: center;
 }
 .call-handlers .button1{
@@ -5138,14 +5138,13 @@ font-family: 'Open Sans Condensed', sans-serif;
 }
 .call-handlers .button2{
     background-color: white; 
-    height: 50px; 
-    width: 50px; 
+    height: 70px; 
+    width: 70px; 
     border-radius: 50%; 
     margin-right: 20px;
 }
-.call-handlers .button2 i{
-    font-size: 25px; 
-    color: #ea192b;
+.call-handlers .button2 img{
+    width: 100%;
 }
 @media (min-width: 651px){
     .local-screen{

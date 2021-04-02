@@ -5115,7 +5115,7 @@ font-family: 'Open Sans Condensed', sans-serif;
     background-color: black; 
     height: 85vh;
 }
-.remote-screen img{
+.remote-screen video{
     width: 100%; 
     height: 85vh;
 }
@@ -5155,7 +5155,7 @@ font-family: 'Open Sans Condensed', sans-serif;
     padding: 10px; 
     background-color: black;
 }
-.local-screen img{
+.local-screen video{
     width: 100%;
 }
 }
@@ -5164,7 +5164,7 @@ font-family: 'Open Sans Condensed', sans-serif;
     background-color: black; 
     height: 85vh;
 }
-.remote-screen img{
+.remote-screen video{
     width: 100%; 
     height: 40vh;
 }
@@ -5172,7 +5172,7 @@ font-family: 'Open Sans Condensed', sans-serif;
     padding: 13px; 
     background-color: black;
 }
-.local-screen img{
+.local-screen video{
     width: 100%;
     height: 40vh;
 }
